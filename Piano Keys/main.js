@@ -8,6 +8,16 @@ keys.forEach(function(key){
 // functions that change the color of the keys below
 const keyPlay = function(event){
   event.target.style.backgroundColor = 'Red' ;          //target property returns the element where the event occured
+
+  //get the id of the note
+  const noteId = event.target.id ;
+
+  //construct the id of the corresponding sound
+  const soundId = noteId.replace('-key', '-sound');
+
+  //get the sound element
+  const Audio = document.getElementById(soundId) ;
+  Audio.play();
 }
 const keyReturn = function(event){
   event.target.style.backgroundColor = '' ;
